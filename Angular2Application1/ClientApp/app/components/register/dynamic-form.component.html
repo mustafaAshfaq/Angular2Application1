@@ -1,0 +1,11 @@
+﻿<div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div *ngFor="let question of questions" class="form-row">
+            <df-question [question]="question" [form]="form"></df-question>
+        </div>
+        <div class="form-row">
+            <button type="submit" [disabled]="!form.valid" >Save</button>
+        </div>
+    </form>
+    <div *ngIf="payload" class="form-row"><strong>Saved the following values</strong><br>{{payload}}</div>
+</div>
